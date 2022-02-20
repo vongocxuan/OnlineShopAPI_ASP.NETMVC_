@@ -1,0 +1,17 @@
+﻿using OnlineShop.Data.Infrastructure;
+using OnlineShop.Model.Models;
+
+namespace OnlineShop.Data.Repository
+{
+    public interface ISlideRepository
+    {
+    }
+
+    public class SlideRepository : RepositoryBase<Slide>, ISlideRepository
+    {
+        public SlideRepository(IDbFactory dbFactory): base(dbFactory)
+        {
+
+        }
+    }
+}
