@@ -49,7 +49,7 @@ namespace OnlineShop.Data.Infrastructure
             return dbSet.Remove(entity);
         }
 
-        public virtual void DeleteMulti(Expression<Func<T,bool>> where = null)
+        public virtual void DeleteMulti(Expression<Func<T,bool>> where)
         {
             var objects = dbSet.Where<T>(where);
             foreach (var obj in objects)

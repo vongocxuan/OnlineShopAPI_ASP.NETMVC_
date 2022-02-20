@@ -1,4 +1,5 @@
 ﻿using OnlineShop.Model.Abstract;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -25,6 +26,11 @@ namespace OnlineShop.Model.Models
         public string Content { set; get; }
         public bool? HomeFlag { set; get; }
         public bool? ViewCount { set; get; }
+
+        [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { set; get; }
+
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
+
     }
 }

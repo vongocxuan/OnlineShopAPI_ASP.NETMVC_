@@ -10,7 +10,7 @@ namespace OnlineShop.Data.Infrastructure
         void Update(T enity);
         T Delete(T entity);
         T Delete(int i);
-        void DeleteMulti(Expression<Func<T, bool>> where=null);
+        void DeleteMulti(Expression<Func<T, bool>> where);
         T GetSingleById(int id);
         T GetSingleByCondition(Expression<Func<T, bool>> where=null, string[] includes = null);
         IEnumerable<T> GetAll(string[] includes = null);

@@ -71,8 +71,17 @@
     <Compile Include="Repository\OrderDetailRepository.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
     <Compile Include="Repository\PageRepository.cs" />
-    <Compile Include="Repository\PostCategory.cs" />
+    <Compile Include="Repository\PostCategoryRepository.cs" />
     <Compile Include="Repository\PostRepository.cs" />
+    <Compile Include="Repository\PostTagRepository.cs" />
+    <Compile Include="Repository\ProductCategoryRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\ProductTagRepository.cs" />
+    <Compile Include="Repository\SlideRepository.cs" />
+    <Compile Include="Repository\SupportOnlineRepository.cs" />
+    <Compile Include="Repository\SystemConfigRepository.cs" />
+    <Compile Include="Repository\TagRepository.cs" />
+    <Compile Include="Repository\VisitorStatisticRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnlineShop.Common\OnlineShop.Common.csproj">
