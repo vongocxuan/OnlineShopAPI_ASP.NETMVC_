@@ -1,5 +1,7 @@
 ﻿using OnlineShop.Data.Infrastructure;
 using OnlineShop.Model.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OnlineShop.Data.Repository
 {
