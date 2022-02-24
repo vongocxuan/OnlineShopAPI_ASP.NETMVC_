@@ -172,11 +172,10 @@
                         MetaKeyword = c.String(maxLength: 250),
                         MetaDescription = c.String(maxLength: 250),
                         Status = c.Boolean(nullable: false),
-                        PostCategory_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.PostCategories", t => t.PostCategory_ID)
-                .Index(t => t.PostCategory_ID);
+                .ForeignKey("dbo.PostCategories", t => t.CategoryID, cascadeDelete: true)
+                .Index(t => t.CategoryID);
             
             CreateTable(
                 "dbo.PostTags",
@@ -273,7 +272,7 @@
             DropForeignKey("dbo.ProductTags", "ProductID", "dbo.Products");
             DropForeignKey("dbo.PostTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.PostTags", "PostID", "dbo.Posts");
-            DropForeignKey("dbo.Posts", "PostCategory_ID", "dbo.PostCategories");
+            DropForeignKey("dbo.Posts", "CategoryID", "dbo.PostCategories");
             DropForeignKey("dbo.OrderDetails", "ProductID", "dbo.Products");
             DropForeignKey("dbo.Products", "CategoryID", "dbo.ProductCategorys");
             DropForeignKey("dbo.OrderDetails", "OrderID", "dbo.Orders");
@@ -282,7 +281,7 @@
             DropIndex("dbo.ProductTags", new[] { "ProductID" });
             DropIndex("dbo.PostTags", new[] { "TagID" });
             DropIndex("dbo.PostTags", new[] { "PostID" });
-            DropIndex("dbo.Posts", new[] { "PostCategory_ID" });
+            DropIndex("dbo.Posts", new[] { "CategoryID" });
             DropIndex("dbo.Products", new[] { "CategoryID" });
             DropIndex("dbo.OrderDetails", new[] { "ProductID" });
             DropIndex("dbo.OrderDetails", new[] { "OrderID" });
